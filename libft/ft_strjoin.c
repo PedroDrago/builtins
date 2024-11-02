@@ -45,7 +45,7 @@ static void	concatenate_s2(char const *s2, int i, char *joined)
 	joined[i] = '\0';
 }
 
-char	*ft_strjoin(char *s1, char *s2, int should_free)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*joined;
 	int		i;
@@ -57,5 +57,6 @@ char	*ft_strjoin(char *s1, char *s2, int should_free)
 		return (NULL);
 	i = concatenate_s1(s1, joined);
 	concatenate_s2(s2, i, joined);
-	return (free_vars((char *)s1, (char *)s2, should_free), joined);
+	// return (free_vars((char *)s1, (char *)s2, should_free), joined);
+	return (joined);
 }

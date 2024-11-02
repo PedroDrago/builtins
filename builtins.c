@@ -48,7 +48,7 @@ int	cd(char *argv[], t_env_list *env)
 	len = argv_len(argv);
 	if (len > 2)
 	{
-		ft_putstr_fd("minishell: cd: too many arguments", 2);
+		perror("minishell: cd: too many arguments");
 		return (1);
 	}
 	if (len == 2)
@@ -124,11 +124,4 @@ int	ft_exit(char *argv[])
 	status = ft_atoi(argv[1]);
 	exit(status);
 
-}
-
-int main(int argc, char *argv[])
-{
-	char *myargv[] = {NULL};
-	ft_echo(myargv);
-	return 0;
 }

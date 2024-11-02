@@ -203,7 +203,7 @@ If flag is passed as O_TWO it will free `s2`
 If flag is passed as O_BOTH it will free both `s1 and `s2`
 If flag is passed as 0 it won't free neither
 */
-char			*ft_strjoin(char *s1, char *s2, int should_free);
+char			*ft_strjoin(char *s1, char *s2);
 /*
 Allocates (with malloc(3)) and returns a copy of
 `s1` with the characters specified in `set` removed

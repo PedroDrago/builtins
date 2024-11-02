@@ -49,6 +49,7 @@ t_env_list *new_env_list()
 		return(NULL);
 	list->head = NULL;
 	list->tail= NULL;
+	list->len = 0;
 	return (list);
 }
 
@@ -56,6 +57,7 @@ int	env_add_back(t_env_list *list, t_env_node *node)
 {
 	if (!list || !node)
 		return (0);
+	list->len++;
 	if (!list->head)
 	{
 		list->head = node;
@@ -216,31 +218,3 @@ int	ft_unset(char **argv, t_env_list *env)
 	return (1);
 }
 
-// int main(int argc, char *argv[], char *envp[])
-// {
-// 	t_env_list	*env;
-// 	t_env_node	*node;
-// 	char **key_value;
-// 	int	i;
-//
-// 	env = new_env_list();
-// 	i = 0;
-// 	while(envp[i])
-// 	{
-// 		// HOME=/home/pdrago -> "HOME", "/home/pdrago"
-// 		key_value = split_env(envp[i]);
-// 		if (!key_value)
-// 			exit(1);
-// 		node = new_env_node(key_value[0], key_value[1]);
-// 		if (!node)
-// 			exit(1);
-// 		env_add_back(env, node);
-// 		i++;
-// 	}
-// 	char *my_argv[] = {"export", "OPA=VALOR", "1OPA2=VALOR2", NULL};
-// 	ft_export(my_argv, env);
-// 	char *my_argv2[] = {"unset", "OPA", "OPA2", NULL};
-// 	ft_unset(my_argv2, env);
-// 	ft_env(env);
-// 	return 0;
-// }
