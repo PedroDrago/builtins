@@ -89,12 +89,12 @@ void	execute(char *command, char *argv[], t_env_list *env)
 			{
 				if (access(command_path, X_OK) == 0)
 					execve(command_path, argv, envp);
-				ft_perror("Permission denied", command_path);
+				perror("minishell: ");
 			}
 			i++;
 		}
 	}
-	ft_perror("Command not found", command);
+	perror("minishell: ");
 }
 
 int main(int argc, char *argv[], char *envp[])
